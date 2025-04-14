@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vigenère Cipher Web Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Vigenère Cipher</h2>
+    <form method="POST">
+      <label>Message:</label>
+      <textarea name="message" required></textarea>
+
+      <label>Key:</label>
+      <input type="text" name="key" required />
+
+      <label>Action:</label>
+      <select name="action">
+        <option value="encrypt">Encrypt</option>
+        <option value="decrypt">Decrypt</option>
+      </select>
+
+      <button type="submit">Go</button>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <strong>Result:</strong>
+        <p>{{ result }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
